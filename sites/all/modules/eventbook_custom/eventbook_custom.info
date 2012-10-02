@@ -1,0 +1,3 @@
+name = eventbook_custom
+description = Custom code for Event Book.
+core = 7.x

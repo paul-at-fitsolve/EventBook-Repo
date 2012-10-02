@@ -1,0 +1,24 @@
+<?php
+function eventbook_custom_menu(){
+  $items['register/premium'] = array(
+    'type' => MENU_CALLBACK,
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('register_premium_form'),
+    'access arguments' => array('access content')
+  );
+  return $items;
+}
+
+function register_premium_form($form, &$form_state){
+ 
+  $form['title'] = array(
+  '#type' => 'textfield',
+  '#title' => t('Subject'),
+  '#default_value' => 'Hello',
+  '#size' => 60,
+  '#maxlength' => 128,
+  '#required' => TRUE,
+);
+
+  return $form;
+}

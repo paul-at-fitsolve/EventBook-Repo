@@ -579,6 +579,7 @@ function file_managed_file_validate(&$element, &$form_state) {
  * @see file_managed_file_process()
  */
 function file_managed_file_submit($form, &$form_state) {
+
   // Determine whether it was the upload or the remove button that was clicked,
   // and set $element to the managed_file element that contains that button.
   $parents = $form_state['triggering_element']['#array_parents'];

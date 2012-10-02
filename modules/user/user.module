@@ -3737,7 +3737,8 @@ function user_register_form($form, &$form_state) {
  * Validation function for the user registration form.
  */
 function user_register_validate($form, &$form_state) {
-  entity_form_field_validate('user', $form, $form_state);
+	dpm($form_state);
+  //entity_form_field_validate('user', $form, $form_state);
 }
 
 /**
@@ -3782,7 +3783,6 @@ function user_register_submit($form, &$form_state) {
   }
   $form_state['user'] = $account;
   $form_state['values']['uid'] = $account->uid;
-
   watchdog('user', 'New user: %name (%email).', array('%name' => $form_state['values']['name'], '%email' => $form_state['values']['mail']), WATCHDOG_NOTICE, l(t('edit'), 'user/' . $account->uid . '/edit'));
 
   // Add plain text password into user account to generate mail tokens.

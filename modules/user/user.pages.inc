@@ -297,6 +297,7 @@ function user_profile_form_validate($form, &$form_state) {
  * Submit function for the user account and profile editing form.
  */
 function user_profile_form_submit($form, &$form_state) {
+	dpm("hello");
   $account = $form_state['user'];
   $category = $form['#user_category'];
   // Remove unneeded values.
